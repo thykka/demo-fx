@@ -4,7 +4,7 @@
   "description": "Tutorial series on demoscene effects",
   "scripts": {
     "dev": "npx parcel src/index.html",
-    "build": "npx parcel build src/index.html"
+    "build": "npx parcel build src/index.html --public-url /demo-fx/"
   },
   "repository": {
     "type": "git",

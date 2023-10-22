@@ -2,10 +2,8 @@
   "name": "demo-fx",
   "version": "1.0.0",
   "description": "Tutorial series on demoscene effects",
-  "source": "src/index.html",
   "scripts": {
-    "dev": "npx parcel",
-    "build": "npx parcel build src/index.html --public-url /demo-fx/"
+    "build": "node ./build.mjs"
   },
   "repository": {
     "type": "git",
@@ -16,17 +14,10 @@
   "bugs": {
     "url": "https://github.com/thykka/demo-fx/issues"
   },
-  "homepage": "https://github.com/thykka/demo-fx#readme",
-  "devDependencies": {
-    "@parcel/transformer-sass": "^2.10.0",
-    "parcel": "^2.10.0",
-    "parcel-transformer-markdown": "^3.0.0",
-    "process": "^0.11.10"
-  },
+  "homepage": "https://thykka.github.io/demo-fx/",
   "dependencies": {
-    "marked": "^9.1.2"
-  },
-  "@parcel/resolver-default": {
-    "packageExports": true
+    "marked": "^9.1.2",
+    "sass": "^1.69.4",
+    "mustache": "^4.2.0"
   }
 }

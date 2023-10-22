@@ -1,9 +1,8 @@
-{{ #menu }}
 <nav>
+  <a href="{{{ baseUrl }}}">Table of contents</a>
   <ul>
-    {{ #items }}
-    {{> menuItem}}
-    {{ /items }}
+  {{# pages }}
+    {{> menu-item }}
+  {{/ pages }}
   </ul>
 </nav>
-{{ /menu }}

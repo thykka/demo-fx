@@ -6,4 +6,4 @@ The framework creates static html from [markdown](https://en.wikipedia.org/wiki/
 
 There's a [GitHub action](https://github.com/thykka/demo-fx/blob/main/.github/workflows/static.yml) that builds the site when changes are pushed to main. This way one can add and edit articles with minimal effort, while still having basic formatting options available.
 
-And if you're wondering; no, this hasn't got anything to do with demos. It's just a placeholder page I put up while *preparing* to write about demos :-D
+And if you're wondering; no, this article doesn't have anything to do with demos. It's just a placeholder page I put up while *preparing* to write articles about demos :-D

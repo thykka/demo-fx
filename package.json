@@ -1,0 +1,19 @@
+{
+  "name": "demo-fx",
+  "version": "1.0.0",
+  "description": "Tutorial series on demoscene effects",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/thykka/demo-fx.git"
+  },
+  "author": "Moses Holmström",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/thykka/demo-fx/issues"
+  },
+  "homepage": "https://github.com/thykka/demo-fx#readme"
+}

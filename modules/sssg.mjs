@@ -4,19 +4,21 @@ import mustache from 'mustache';
 import { marked } from 'marked';
 import { compile as compileSass } from 'sass';
 
+const defaultPageOverrides = {
+  index: { template: 'index' }
+}
+
 export class Sssg {
-  constructor(options) {
+  constructor(options, pageOverrides = {}) {
     const defaults = {
       baseUrl: 'https://localhost:3000/',
       buildDir: './dist',
       templateDir: './src/templates/',
       articlesDir: './src/articles/',
-      stylesheet: './src/styles/index.scss',
-      pageOverrides: {
-        index: { template: 'index' }
-      }
+      stylesheet: './src/styles/index.scss'
     };
     this.settings = Object.assign({}, defaults, options);
+    this.settings.pageOverrides = Object.assign({}, defaultPageOverrides, pageOverrides);
   }
 
   async build() {
@@ -44,18 +46,14 @@ export class Sssg {
   preparePages(pages) {
     return Object.entries(pages).map(([slug, markdown]) => {
       const filename = slug + '.html';
-      const buildPath = path.join(this.settings.buildDir, filename);
-      const selfUrl = this.settings.baseUrl + filename;
-      const canonicalUrl = this.settings.baseUrl + (slug === 'index' ? '' : filename);
-      console.log(markdown)
       const defaults = {
         template: 'document',
         title: this.extractTitle(markdown) || slug,
+        buildPath: path.join(this.settings.buildDir, filename),
+        selfUrl: this.settings.baseUrl + filename,
+        canonicalUrl: this.settings.baseUrl + (slug === 'index' ? '' : filename),
         slug,
         filename,
-        buildPath,
-        selfUrl,
-        canonicalUrl,
         markdown
       };
       const overrides = this.settings.pageOverrides[slug] ?? {};
